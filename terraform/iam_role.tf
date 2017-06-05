@@ -19,7 +19,8 @@ EOF
 }
 
 resource "aws_iam_policy" "kms" {
-  name        = "kms"
+  name = "kms"
+
   policy = <<EOF
 {
   "Version": "2012-10-17",
