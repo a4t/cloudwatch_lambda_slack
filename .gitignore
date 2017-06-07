@@ -1,5 +1,13 @@
+# common
+!.gitkeep
+
+# terraform
 terraform/encrypted_slack_hook_url
 terraform/terraform.tfvars
 terraform/terraform.tfstate*
 dist/*
-!.gitkeep
+
+# config
+config/*
+!config/*.sample
+

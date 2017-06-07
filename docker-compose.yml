@@ -1,0 +1,14 @@
+networks: {}
+version: '2.0'
+
+services:
+  terraform:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/cloudwatch_lambda_slack
+    env_file:
+      - config/slack.env
+      - config/common.env
+      - config/aws.env
