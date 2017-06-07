@@ -51,6 +51,10 @@ const https = require('https');
 const kmsEncryptedHookUrl = process.env.kmsEncryptedHookUrl;
 // The Slack channel to send a message to stored in the slackChannel environment variable
 const slackChannel = process.env.slackChannel;
+
+// The Slack mention
+const slackMention = process.env.slackMention
+
 let hookUrl;
 
 
@@ -94,7 +98,7 @@ function processEvent(event, callback) {
 
     const slackMessage = {
         channel: slackChannel,
-        text: `${alarmName} state is now ${newState}: ${reason}`,
+        text: `${alarmName} state is now ${newState}: ${reason} ${slackMention}`,
     };
 
     postMessage(slackMessage, (response) => {

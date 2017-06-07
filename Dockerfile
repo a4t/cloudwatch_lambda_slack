@@ -7,6 +7,7 @@ ENV TERRAFORM_VERSION=0.9.6
 RUN apk update && \
     apk add \ 
     ca-certificates \
+    zip \ 
     unzip \
     wget && \
     wget -P /tmp https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \

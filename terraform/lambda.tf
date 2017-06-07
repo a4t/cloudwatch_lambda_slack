@@ -30,6 +30,7 @@ resource "aws_lambda_function" "cloudwatch_to_slack" {
     variables = {
       kmsEncryptedHookUrl = "${data.aws_kms_ciphertext.slack_hook_url.ciphertext_blob}"
       slackChannel        = "${var.slack_channel}"
+      slackMention        = "${var.slack_mention}"
     }
   }
 }
